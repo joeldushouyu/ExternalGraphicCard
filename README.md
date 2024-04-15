@@ -21,12 +21,15 @@ When plugging the USb 3.0 Device into the host laptop and launch the C++ program
 
 ## Video & Sound in Sync
 [Video link](https://github.com/joeldushouyu/ExternalGraphicCard/blob/main/videoDirectory/video-sync.mp4)
+
 ![](./videoDirectory/video-sync.gif)
 
 ## Drag window across monitors
 [Video link](https://github.com/joeldushouyu/ExternalGraphicCard/blob/main/videoDirectory/drag-window-between-monitors.mp4)
+
 ![](./videoDirectory/drag-window.gif)
 
 ## Browing  website
 [Video link](https://github.com/joeldushouyu/ExternalGraphicCard/blob/main/videoDirectory/browsing-website.mp4)
+
 ![](./videoDirectory/browse.gif)
