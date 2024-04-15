@@ -1,0 +1,558 @@
+   1              		.cpu arm926ej-s
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 4
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.file	"cyfxtx.c"
+  13              		.text
+  14              		.align	2
+  16              	CyU3PDmaBufMgrSetStatus:
+  17              		@ args = 0, pretend = 0, frame = 0
+  18              		@ frame_needed = 0, uses_anonymous_args = 0
+  19 0000 F0402DE9 		stmfd	sp!, {r4, r5, r6, r7, lr}
+  20 0004 A052A0E1 		mov	r5, r0, lsr #5
+  21 0008 1F0000E2 		and	r0, r0, #31
+  22 000c 013080E0 		add	r3, r0, r1
+  23 0010 200053E3 		cmp	r3, #32
+  24 0014 2030A023 		movcs	r3, #32
+  25 0018 200053E3 		cmp	r3, #32
+  26 001c 0160A0E3 		mov	r6, #1
+  27 0020 16C3A011 		movne	ip, r6, asl r3
+  28 0024 1640A0E1 		mov	r4, r6, asl r0
+  29 0028 01C04C12 		subne	ip, ip, #1
+  30 002c 00C0E003 		mvneq	ip, #0
+  31 0030 014064E2 		rsb	r4, r4, #1
+  32 0034 0C4084E0 		add	r4, r4, ip
+  33 0038 58C09FE5 		ldr	ip, .L13
+  34 003c 0170A0E3 		mov	r7, #1
+  35 0040 40C09CE5 		ldr	ip, [ip, #64]
+  36 0044 05518CE0 		add	r5, ip, r5, asl #2
+  37 0048 00C0A0E3 		mov	ip, #0
+  38              	.L3:
+  39 004c 000051E3 		cmp	r1, #0
+  40 0050 0F00000A 		beq	.L12
+  41 0054 0C6095E7 		ldr	r6, [r5, ip]
+  42 0058 001081E0 		add	r1, r1, r0
+  43 005c 011063E0 		rsb	r1, r3, r1
+  44 0060 000052E3 		cmp	r2, #0
+  45 0064 04408611 		orrne	r4, r6, r4
+  46 0068 0440C601 		biceq	r4, r6, r4
+  47 006c 1F0051E3 		cmp	r1, #31
+  48 0070 0C4085E7 		str	r4, [r5, ip]
+  49 0074 1741A091 		movls	r4, r7, asl r1
+  50 0078 0130A091 		movls	r3, r1
+  51 007c 01404492 		subls	r4, r4, #1
+  52 0080 0040E083 		mvnhi	r4, #0
+  53 0084 2030A083 		movhi	r3, #32
+  54 0088 04C08CE2 		add	ip, ip, #4
+  55 008c 0000A0E3 		mov	r0, #0
+  56 0090 EDFFFFEA 		b	.L3
+  57              	.L12:
+  58 0094 F080BDE8 		ldmfd	sp!, {r4, r5, r6, r7, pc}
+  59              	.L14:
+  60              		.align	2
+  61              	.L13:
+  62 0098 00000000 		.word	.LANCHOR0
+  64              		.align	2
+  65              		.global	CyU3PUndefinedHandler
+  67              	CyU3PUndefinedHandler:
+  68              		@ Volatile: function does not return.
+  69              		@ args = 0, pretend = 0, frame = 0
+  70              		@ frame_needed = 0, uses_anonymous_args = 0
+  71              		@ link register save eliminated.
+  72              	.L16:
+  73 009c FEFFFFEA 		b	.L16
+  75              		.align	2
+  76              		.global	CyU3PPrefetchHandler
+  78              	CyU3PPrefetchHandler:
+  79              		@ Volatile: function does not return.
+  80              		@ args = 0, pretend = 0, frame = 0
+  81              		@ frame_needed = 0, uses_anonymous_args = 0
+  82              		@ link register save eliminated.
+  83              	.L18:
+  84 00a0 FEFFFFEA 		b	.L18
+  86              		.align	2
+  87              		.global	CyU3PAbortHandler
+  89              	CyU3PAbortHandler:
+  90              		@ Volatile: function does not return.
+  91              		@ args = 0, pretend = 0, frame = 0
+  92              		@ frame_needed = 0, uses_anonymous_args = 0
+  93              		@ link register save eliminated.
+  94              	.L20:
+  95 00a4 FEFFFFEA 		b	.L20
+  97              		.align	2
+  98              		.global	tx_application_define
+ 100              	tx_application_define:
+ 101              		@ args = 0, pretend = 0, frame = 0
+ 102              		@ frame_needed = 0, uses_anonymous_args = 0
+ 103              		@ link register save eliminated.
+ 104 00a8 FEFFFFEA 		b	CyU3PApplicationDefine
+ 106              		.align	2
+ 107              		.global	CyU3PMemInit
+ 109              	CyU3PMemInit:
+ 110              		@ args = 0, pretend = 0, frame = 0
+ 111              		@ frame_needed = 0, uses_anonymous_args = 0
+ 112 00ac 34309FE5 		ldr	r3, .L24
+ 113 00b0 07402DE9 		stmfd	sp!, {r0, r1, r2, lr}
+ 114 00b4 4C1093E5 		ldr	r1, [r3, #76]
+ 115 00b8 000051E3 		cmp	r1, #0
+ 116 00bc 0700001A 		bne	.L22
+ 117 00c0 0120A0E3 		mov	r2, #1
+ 118 00c4 4C2083E5 		str	r2, [r3, #76]
+ 119 00c8 3430A0E3 		mov	r3, #52
+ 120 00cc 00308DE5 		str	r3, [sp]
+ 121 00d0 14009FE5 		ldr	r0, .L24+4
+ 122 00d4 14209FE5 		ldr	r2, .L24+8
+ 123 00d8 0239A0E3 		mov	r3, #32768
+ 124 00dc FEFFFFEB 		bl	_txe_byte_pool_create
+ 125              	.L22:
+ 126 00e0 0CD08DE2 		add	sp, sp, #12
+ 127              		@ sp needed
+ 128 00e4 04F09DE4 		ldr	pc, [sp], #4
+ 129              	.L25:
+ 130              		.align	2
+ 131              	.L24:
+ 132 00e8 00000000 		.word	.LANCHOR0
+ 133 00ec 00000000 		.word	glMemBytePool
+ 134 00f0 00800340 		.word	1073971200
+ 136              		.align	2
+ 137              		.global	CyU3PMemAlloc
+ 139              	CyU3PMemAlloc:
+ 140              		@ args = 0, pretend = 0, frame = 8
+ 141              		@ frame_needed = 0, uses_anonymous_args = 0
+ 142 00f4 13402DE9 		stmfd	sp!, {r0, r1, r4, lr}
+ 143 00f8 0040A0E1 		mov	r4, r0
+ 144 00fc FEFFFFEB 		bl	_tx_thread_identify
+ 145 0100 04108DE2 		add	r1, sp, #4
+ 146 0104 0420A0E1 		mov	r2, r4
+ 147 0108 003050E2 		subs	r3, r0, #0
+ 148 010c 0A30A013 		movne	r3, #10
+ 149 0110 14009FE5 		ldr	r0, .L31
+ 150 0114 FEFFFFEB 		bl	_txe_byte_allocate
+ 151 0118 000050E3 		cmp	r0, #0
+ 152 011c 04009D05 		ldreq	r0, [sp, #4]
+ 153 0120 0000A013 		movne	r0, #0
+ 154 0124 08D08DE2 		add	sp, sp, #8
+ 155              		@ sp needed
+ 156 0128 1080BDE8 		ldmfd	sp!, {r4, pc}
+ 157              	.L32:
+ 158              		.align	2
+ 159              	.L31:
+ 160 012c 00000000 		.word	glMemBytePool
+ 162              		.align	2
+ 163              		.global	CyU3PMemFree
+ 165              	CyU3PMemFree:
+ 166              		@ args = 0, pretend = 0, frame = 0
+ 167              		@ frame_needed = 0, uses_anonymous_args = 0
+ 168              		@ link register save eliminated.
+ 169 0130 FEFFFFEA 		b	_txe_byte_release
+ 171              		.align	2
+ 172              		.global	CyU3PMemSet
+ 174              	CyU3PMemSet:
+ 175              		@ args = 0, pretend = 0, frame = 0
+ 176              		@ frame_needed = 0, uses_anonymous_args = 0
+ 177              		@ link register save eliminated.
+ 178 0134 022080E0 		add	r2, r0, r2
+ 179              	.L35:
+ 180 0138 023060E0 		rsb	r3, r0, r2
+ 181 013c A3C1B0E1 		movs	ip, r3, lsr #3
+ 182 0140 0900000A 		beq	.L39
+ 183 0144 0010C0E5 		strb	r1, [r0]
+ 184 0148 0110C0E5 		strb	r1, [r0, #1]
+ 185 014c 0210C0E5 		strb	r1, [r0, #2]
+ 186 0150 0310C0E5 		strb	r1, [r0, #3]
+ 187 0154 0410C0E5 		strb	r1, [r0, #4]
+ 188 0158 0510C0E5 		strb	r1, [r0, #5]
+ 189 015c 0610C0E5 		strb	r1, [r0, #6]
+ 190 0160 0710C0E5 		strb	r1, [r0, #7]
+ 191 0164 080080E2 		add	r0, r0, #8
+ 192 0168 F2FFFFEA 		b	.L35
+ 193              	.L39:
+ 194 016c 033080E0 		add	r3, r0, r3
+ 195              	.L37:
+ 196 0170 030050E1 		cmp	r0, r3
+ 197 0174 0110C014 		strneb	r1, [r0], #1
+ 198 0178 FCFFFF1A 		bne	.L37
+ 199              	.L40:
+ 200 017c 1EFF2FE1 		bx	lr
+ 202              		.align	2
+ 203              		.global	CyU3PMemCopy
+ 205              	CyU3PMemCopy:
+ 206              		@ args = 0, pretend = 0, frame = 0
+ 207              		@ frame_needed = 0, uses_anonymous_args = 0
+ 208              		@ link register save eliminated.
+ 209 0180 022080E0 		add	r2, r0, r2
+ 210              	.L42:
+ 211 0184 02C060E0 		rsb	ip, r0, r2
+ 212 0188 AC31B0E1 		movs	r3, ip, lsr #3
+ 213 018c 1200000A 		beq	.L44
+ 214 0190 0030D1E5 		ldrb	r3, [r1]	@ zero_extendqisi2
+ 215 0194 080080E2 		add	r0, r0, #8
+ 216 0198 083040E5 		strb	r3, [r0, #-8]
+ 217 019c 0130D1E5 		ldrb	r3, [r1, #1]	@ zero_extendqisi2
+ 218 01a0 081081E2 		add	r1, r1, #8
+ 219 01a4 073040E5 		strb	r3, [r0, #-7]
+ 220 01a8 063051E5 		ldrb	r3, [r1, #-6]	@ zero_extendqisi2
+ 221 01ac 063040E5 		strb	r3, [r0, #-6]
+ 222 01b0 053051E5 		ldrb	r3, [r1, #-5]	@ zero_extendqisi2
+ 223 01b4 053040E5 		strb	r3, [r0, #-5]
+ 224 01b8 043051E5 		ldrb	r3, [r1, #-4]	@ zero_extendqisi2
+ 225 01bc 043040E5 		strb	r3, [r0, #-4]
+ 226 01c0 033051E5 		ldrb	r3, [r1, #-3]	@ zero_extendqisi2
+ 227 01c4 033040E5 		strb	r3, [r0, #-3]
+ 228 01c8 023051E5 		ldrb	r3, [r1, #-2]	@ zero_extendqisi2
+ 229 01cc 023040E5 		strb	r3, [r0, #-2]
+ 230 01d0 013051E5 		ldrb	r3, [r1, #-1]	@ zero_extendqisi2
+ 231 01d4 013040E5 		strb	r3, [r0, #-1]
+ 232 01d8 E9FFFFEA 		b	.L42
+ 233              	.L44:
+ 234 01dc 0C0053E1 		cmp	r3, ip
+ 235 01e0 0320D117 		ldrneb	r2, [r1, r3]	@ zero_extendqisi2
+ 236 01e4 0320C017 		strneb	r2, [r0, r3]
+ 237 01e8 01308312 		addne	r3, r3, #1
+ 238 01ec FAFFFF1A 		bne	.L44
+ 239              	.L46:
+ 240 01f0 1EFF2FE1 		bx	lr
+ 242              		.align	2
+ 243              		.global	CyU3PMemCmp
+ 245              	CyU3PMemCmp:
+ 246              		@ args = 0, pretend = 0, frame = 0
+ 247              		@ frame_needed = 0, uses_anonymous_args = 0
+ 248 01f4 0030A0E3 		mov	r3, #0
+ 249 01f8 10402DE9 		stmfd	sp!, {r4, lr}
+ 250              	.L48:
+ 251 01fc 020053E1 		cmp	r3, r2
+ 252 0200 0700000A 		beq	.L52
+ 253 0204 0340D0E7 		ldrb	r4, [r0, r3]	@ zero_extendqisi2
+ 254 0208 013083E2 		add	r3, r3, #1
+ 255 020c 03C081E0 		add	ip, r1, r3
+ 256 0210 01C05CE5 		ldrb	ip, [ip, #-1]	@ zero_extendqisi2
+ 257 0214 0C0054E1 		cmp	r4, ip
+ 258 0218 F7FFFF0A 		beq	.L48
+ 259 021c 04006CE0 		rsb	r0, ip, r4
+ 260 0220 1080BDE8 		ldmfd	sp!, {r4, pc}
+ 261              	.L52:
+ 262 0224 0000A0E3 		mov	r0, #0
+ 263 0228 1080BDE8 		ldmfd	sp!, {r4, pc}
+ 265              		.align	2
+ 266              		.global	CyU3PDmaBufferInit
+ 268              	CyU3PDmaBufferInit:
+ 269              		@ args = 0, pretend = 0, frame = 0
+ 270              		@ frame_needed = 0, uses_anonymous_args = 0
+ 271 022c 38402DE9 		stmfd	sp!, {r3, r4, r5, lr}
+ 272 0230 80309FE5 		ldr	r3, .L64
+ 273 0234 382093E5 		ldr	r2, [r3, #56]
+ 274 0238 000052E3 		cmp	r2, #0
+ 275 023c 0200000A 		beq	.L54
+ 276 0240 3C3093E5 		ldr	r3, [r3, #60]
+ 277 0244 000053E3 		cmp	r3, #0
+ 278 0248 3880BD18 		ldmnefd	sp!, {r3, r4, r5, pc}
+ 279              	.L54:
+ 280 024c 64409FE5 		ldr	r4, .L64
+ 281 0250 0010A0E3 		mov	r1, #0
+ 282 0254 0400A0E1 		mov	r0, r4
+ 283 0258 0120A0E1 		mov	r2, r1
+ 284 025c 3830A0E3 		mov	r3, #56
+ 285 0260 FEFFFFEB 		bl	_txe_mutex_create
+ 286 0264 005050E2 		subs	r5, r0, #0
+ 287 0268 3880BD18 		ldmnefd	sp!, {r3, r4, r5, pc}
+ 288 026c 0E0DA0E3 		mov	r0, #896
+ 289 0270 FEFFFFEB 		bl	CyU3PMemAlloc
+ 290 0274 000050E3 		cmp	r0, #0
+ 291 0278 400084E5 		str	r0, [r4, #64]
+ 292 027c 0200001A 		bne	.L57
+ 293 0280 0400A0E1 		mov	r0, r4
+ 294 0284 3840BDE8 		ldmfd	sp!, {r3, r4, r5, lr}
+ 295 0288 FEFFFFEA 		b	_txe_mutex_delete
+ 296              	.L57:
+ 297 028c 0510A0E1 		mov	r1, r5
+ 298 0290 0E2DA0E3 		mov	r2, #896
+ 299 0294 FEFFFFEB 		bl	CyU3PMemSet
+ 300 0298 1C309FE5 		ldr	r3, .L64+4
+ 301 029c 485084E5 		str	r5, [r4, #72]
+ 302 02a0 383084E5 		str	r3, [r4, #56]
+ 303 02a4 0E39A0E3 		mov	r3, #229376
+ 304 02a8 3C3084E5 		str	r3, [r4, #60]
+ 305 02ac E030A0E3 		mov	r3, #224
+ 306 02b0 443084E5 		str	r3, [r4, #68]
+ 307 02b4 3880BDE8 		ldmfd	sp!, {r3, r4, r5, pc}
+ 308              	.L65:
+ 309              		.align	2
+ 310              	.L64:
+ 311 02b8 00000000 		.word	.LANCHOR0
+ 312 02bc 00000440 		.word	1074003968
+ 314              		.align	2
+ 315              		.global	CyU3PDmaBufferDeInit
+ 317              	CyU3PDmaBufferDeInit:
+ 318              		@ args = 0, pretend = 0, frame = 0
+ 319              		@ frame_needed = 0, uses_anonymous_args = 0
+ 320 02c0 38402DE9 		stmfd	sp!, {r3, r4, r5, lr}
+ 321 02c4 FEFFFFEB 		bl	_tx_thread_identify
+ 322 02c8 001050E2 		subs	r1, r0, #0
+ 323 02cc 0010E013 		mvnne	r1, #0
+ 324 02d0 3C009FE5 		ldr	r0, .L70
+ 325 02d4 FEFFFFEB 		bl	_txe_mutex_get
+ 326 02d8 000050E3 		cmp	r0, #0
+ 327 02dc 0050A0E1 		mov	r5, r0
+ 328 02e0 3880BD18 		ldmnefd	sp!, {r3, r4, r5, pc}
+ 329 02e4 28409FE5 		ldr	r4, .L70
+ 330 02e8 400094E5 		ldr	r0, [r4, #64]
+ 331 02ec FEFFFFEB 		bl	_txe_byte_release
+ 332 02f0 0400A0E1 		mov	r0, r4
+ 333 02f4 405084E5 		str	r5, [r4, #64]
+ 334 02f8 385084E5 		str	r5, [r4, #56]
+ 335 02fc 3C5084E5 		str	r5, [r4, #60]
+ 336 0300 445084E5 		str	r5, [r4, #68]
+ 337 0304 FEFFFFEB 		bl	_txe_mutex_put
+ 338 0308 0400A0E1 		mov	r0, r4
+ 339 030c 3840BDE8 		ldmfd	sp!, {r3, r4, r5, lr}
+ 340 0310 FEFFFFEA 		b	_txe_mutex_delete
+ 341              	.L71:
+ 342              		.align	2
+ 343              	.L70:
+ 344 0314 00000000 		.word	.LANCHOR0
+ 346              		.align	2
+ 347              		.global	CyU3PDmaBufferAlloc
+ 349              	CyU3PDmaBufferAlloc:
+ 350              		@ args = 0, pretend = 0, frame = 0
+ 351              		@ frame_needed = 0, uses_anonymous_args = 0
+ 352 0318 F8432DE9 		stmfd	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+ 353 031c 0050A0E1 		mov	r5, r0
+ 354 0320 FEFFFFEB 		bl	_tx_thread_identify
+ 355 0324 001050E2 		subs	r1, r0, #0
+ 356 0328 0A10A013 		movne	r1, #10
+ 357 032c 04019FE5 		ldr	r0, .L94
+ 358 0330 FEFFFFEB 		bl	_txe_mutex_get
+ 359 0334 000050E3 		cmp	r0, #0
+ 360 0338 3B00001A 		bne	.L86
+ 361 033c F4409FE5 		ldr	r4, .L94
+ 362 0340 383094E5 		ldr	r3, [r4, #56]
+ 363 0344 000053E3 		cmp	r3, #0
+ 364 0348 0200000A 		beq	.L76
+ 365 034c 3C3094E5 		ldr	r3, [r4, #60]
+ 366 0350 000053E3 		cmp	r3, #0
+ 367 0354 0200001A 		bne	.L77
+ 368              	.L76:
+ 369 0358 D8009FE5 		ldr	r0, .L94
+ 370 035c FEFFFFEB 		bl	_txe_mutex_put
+ 371 0360 310000EA 		b	.L86
+ 372              	.L77:
+ 373 0364 200055E3 		cmp	r5, #32
+ 374 0368 1F108582 		addhi	r1, r5, #31
+ 375 036c 482094E5 		ldr	r2, [r4, #72]
+ 376 0370 44E094E5 		ldr	lr, [r4, #68]
+ 377 0374 406094E5 		ldr	r6, [r4, #64]
+ 378 0378 0050A0E3 		mov	r5, #0
+ 379 037c A112A081 		movhi	r1, r1, lsr #5
+ 380 0380 0210A093 		movls	r1, #2
+ 381 0384 0170A0E3 		mov	r7, #1
+ 382 0388 0530A0E1 		mov	r3, r5
+ 383 038c 05C0A0E1 		mov	ip, r5
+ 384 0390 078081E0 		add	r8, r1, r7
+ 385              	.L79:
+ 386 0394 0E0050E1 		cmp	r0, lr
+ 387 0398 1600002A 		bcs	.L82
+ 388 039c 029196E7 		ldr	r9, [r6, r2, asl #2]
+ 389 03a0 179C19E0 		ands	r9, r9, r7, asl ip
+ 390 03a4 0700001A 		bne	.L88
+ 391 03a8 000053E3 		cmp	r3, #0
+ 392 03ac 01508C02 		addeq	r5, ip, #1
+ 393 03b0 013083E2 		add	r3, r3, #1
+ 394 03b4 82528500 		addeq	r5, r5, r2, asl #5
+ 395 03b8 080053E1 		cmp	r3, r8
+ 396 03bc 0200001A 		bne	.L80
+ 397 03c0 482084E5 		str	r2, [r4, #72]
+ 398 03c4 0B0000EA 		b	.L82
+ 399              	.L88:
+ 400 03c8 0030A0E3 		mov	r3, #0
+ 401              	.L80:
+ 402 03cc 01C08CE2 		add	ip, ip, #1
+ 403 03d0 20005CE3 		cmp	ip, #32
+ 404 03d4 EEFFFF1A 		bne	.L79
+ 405 03d8 012082E2 		add	r2, r2, #1
+ 406 03dc 0E0052E1 		cmp	r2, lr
+ 407 03e0 0030A003 		moveq	r3, #0
+ 408 03e4 010080E2 		add	r0, r0, #1
+ 409 03e8 00C0A013 		movne	ip, #0
+ 410 03ec 03C0A001 		moveq	ip, r3
+ 411 03f0 0320A001 		moveq	r2, r3
+ 412 03f4 E6FFFFEA 		b	.L79
+ 413              	.L82:
+ 414 03f8 012081E2 		add	r2, r1, #1
+ 415 03fc 020053E1 		cmp	r3, r2
+ 416 0400 0050A013 		movne	r5, #0
+ 417 0404 0500001A 		bne	.L85
+ 418 0408 0500A0E1 		mov	r0, r5
+ 419 040c 011041E2 		sub	r1, r1, #1
+ 420 0410 0120A0E3 		mov	r2, #1
+ 421 0414 F9FEFFEB 		bl	CyU3PDmaBufMgrSetStatus
+ 422 0418 383094E5 		ldr	r3, [r4, #56]
+ 423 041c 855283E0 		add	r5, r3, r5, asl #5
+ 424              	.L85:
+ 425 0420 10009FE5 		ldr	r0, .L94
+ 426 0424 FEFFFFEB 		bl	_txe_mutex_put
+ 427 0428 000000EA 		b	.L75
+ 428              	.L86:
+ 429 042c 0050A0E3 		mov	r5, #0
+ 430              	.L75:
+ 431 0430 0500A0E1 		mov	r0, r5
+ 432 0434 F883BDE8 		ldmfd	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+ 433              	.L95:
+ 434              		.align	2
+ 435              	.L94:
+ 436 0438 00000000 		.word	.LANCHOR0
+ 438              		.align	2
+ 439              		.global	CyU3PDmaBufferFree
+ 441              	CyU3PDmaBufferFree:
+ 442              		@ args = 0, pretend = 0, frame = 0
+ 443              		@ frame_needed = 0, uses_anonymous_args = 0
+ 444 043c 70402DE9 		stmfd	sp!, {r4, r5, r6, lr}
+ 445 0440 0050A0E1 		mov	r5, r0
+ 446 0444 FEFFFFEB 		bl	_tx_thread_identify
+ 447 0448 001050E2 		subs	r1, r0, #0
+ 448 044c 0A10A013 		movne	r1, #10
+ 449 0450 AC009FE5 		ldr	r0, .L109
+ 450 0454 FEFFFFEB 		bl	_txe_mutex_get
+ 451 0458 000050E3 		cmp	r0, #0
+ 452 045c 2500001A 		bne	.L106
+ 453 0460 9C409FE5 		ldr	r4, .L109
+ 454 0464 382094E5 		ldr	r2, [r4, #56]
+ 455 0468 020055E1 		cmp	r5, r2
+ 456 046c 1D00009A 		bls	.L108
+ 457 0470 3C3094E5 		ldr	r3, [r4, #60]
+ 458 0474 033082E0 		add	r3, r2, r3
+ 459 0478 030055E1 		cmp	r5, r3
+ 460 047c 1900002A 		bcs	.L108
+ 461 0480 052062E0 		rsb	r2, r2, r5
+ 462 0484 446094E5 		ldr	r6, [r4, #68]
+ 463 0488 405094E5 		ldr	r5, [r4, #64]
+ 464 048c A2C2A0E1 		mov	ip, r2, lsr #5
+ 465 0490 1F300CE2 		and	r3, ip, #31
+ 466 0494 2225A0E1 		mov	r2, r2, lsr #10
+ 467 0498 0010A0E1 		mov	r1, r0
+ 468 049c 01E0A0E3 		mov	lr, #1
+ 469              	.L101:
+ 470 04a0 060052E1 		cmp	r2, r6
+ 471 04a4 0600003A 		bcc	.L103
+ 472              	.L105:
+ 473 04a8 0C00A0E1 		mov	r0, ip
+ 474 04ac 0020A0E3 		mov	r2, #0
+ 475 04b0 D2FEFFEB 		bl	CyU3PDmaBufMgrSetStatus
+ 476 04b4 0030A0E3 		mov	r3, #0
+ 477 04b8 483084E5 		str	r3, [r4, #72]
+ 478 04bc 0340A0E1 		mov	r4, r3
+ 479 04c0 090000EA 		b	.L100
+ 480              	.L103:
+ 481 04c4 020195E7 		ldr	r0, [r5, r2, asl #2]
+ 482 04c8 1E0310E0 		ands	r0, r0, lr, asl r3
+ 483 04cc F5FFFF0A 		beq	.L105
+ 484 04d0 013083E2 		add	r3, r3, #1
+ 485 04d4 200053E3 		cmp	r3, #32
+ 486 04d8 011081E2 		add	r1, r1, #1
+ 487 04dc 01208202 		addeq	r2, r2, #1
+ 488 04e0 0030A003 		moveq	r3, #0
+ 489 04e4 EDFFFFEA 		b	.L101
+ 490              	.L108:
+ 491 04e8 0040E0E3 		mvn	r4, #0
+ 492              	.L100:
+ 493 04ec 10009FE5 		ldr	r0, .L109
+ 494 04f0 FEFFFFEB 		bl	_txe_mutex_put
+ 495 04f4 000000EA 		b	.L99
+ 496              	.L106:
+ 497 04f8 0040E0E3 		mvn	r4, #0
+ 498              	.L99:
+ 499 04fc 0400A0E1 		mov	r0, r4
+ 500 0500 7080BDE8 		ldmfd	sp!, {r4, r5, r6, pc}
+ 501              	.L110:
+ 502              		.align	2
+ 503              	.L109:
+ 504 0504 00000000 		.word	.LANCHOR0
+ 506              		.align	2
+ 507              		.global	CyU3PFreeHeaps
+ 509              	CyU3PFreeHeaps:
+ 510              		@ args = 0, pretend = 0, frame = 0
+ 511              		@ frame_needed = 0, uses_anonymous_args = 0
+ 512 0508 08402DE9 		stmfd	sp!, {r3, lr}
+ 513 050c FEFFFFEB 		bl	CyU3PDmaBufferDeInit
+ 514 0510 10009FE5 		ldr	r0, .L112
+ 515 0514 FEFFFFEB 		bl	_txe_byte_pool_delete
+ 516 0518 0C309FE5 		ldr	r3, .L112+4
+ 517 051c 0020A0E3 		mov	r2, #0
+ 518 0520 4C2083E5 		str	r2, [r3, #76]
+ 519 0524 0880BDE8 		ldmfd	sp!, {r3, pc}
+ 520              	.L113:
+ 521              		.align	2
+ 522              	.L112:
+ 523 0528 00000000 		.word	glMemBytePool
+ 524 052c 00000000 		.word	.LANCHOR0
+ 526              		.global	glBufferManager
+ 527              		.comm	glMemBytePool,52,4
+ 528              		.global	glMemPoolInit
+ 529              		.bss
+ 530              		.align	2
+ 531              		.set	.LANCHOR0,. + 0
+ 534              	glBufferManager:
+ 535 0000 00000000 		.space	76
+ 535      00000000 
+ 535      00000000 
+ 535      00000000 
+ 535      00000000 
+ 538              	glMemPoolInit:
+ 539 004c 00000000 		.space	4
+ 540              		.ident	"GCC: (Sourcery CodeBench Lite 2013.11-24) 4.8.1"
+DEFINED SYMBOLS
+                            *ABS*:00000000 cyfxtx.c
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:14     .text:00000000 $a
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:16     .text:00000000 CyU3PDmaBufMgrSetStatus
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:62     .text:00000098 $d
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:64     .text:0000009c $a
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:67     .text:0000009c CyU3PUndefinedHandler
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:78     .text:000000a0 CyU3PPrefetchHandler
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:89     .text:000000a4 CyU3PAbortHandler
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:100    .text:000000a8 tx_application_define
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:109    .text:000000ac CyU3PMemInit
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:132    .text:000000e8 $d
+                            *COM*:00000034 glMemBytePool
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:136    .text:000000f4 $a
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:139    .text:000000f4 CyU3PMemAlloc
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:160    .text:0000012c $d
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:162    .text:00000130 $a
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:165    .text:00000130 CyU3PMemFree
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:174    .text:00000134 CyU3PMemSet
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:205    .text:00000180 CyU3PMemCopy
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:245    .text:000001f4 CyU3PMemCmp
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:268    .text:0000022c CyU3PDmaBufferInit
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:311    .text:000002b8 $d
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:314    .text:000002c0 $a
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:317    .text:000002c0 CyU3PDmaBufferDeInit
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:344    .text:00000314 $d
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:346    .text:00000318 $a
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:349    .text:00000318 CyU3PDmaBufferAlloc
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:436    .text:00000438 $d
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:438    .text:0000043c $a
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:441    .text:0000043c CyU3PDmaBufferFree
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:504    .text:00000504 $d
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:506    .text:00000508 $a
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:509    .text:00000508 CyU3PFreeHeaps
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:523    .text:00000528 $d
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:534    .bss:00000000 glBufferManager
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:538    .bss:0000004c glMemPoolInit
+C:\Users\User\AppData\Local\Temp\ccR6PlRf.s:530    .bss:00000000 $d
+
+UNDEFINED SYMBOLS
+CyU3PApplicationDefine
+_txe_byte_pool_create
+_tx_thread_identify
+_txe_byte_allocate
+_txe_byte_release
+_txe_mutex_create
+_txe_mutex_delete
+_txe_mutex_get
+_txe_mutex_put
+_txe_byte_pool_delete

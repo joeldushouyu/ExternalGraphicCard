@@ -1,0 +1,4 @@
+Partlist exported from /home/shouyu/EAGLE/projects/CypressToULX3sVersion3/newPins-primitive.sch at 4/13/24 1:28 PM
+
+Qty Value     Device    Package   Parts               Description MF MPN OC_FARNELL OC_NEWARK POPULARITY
+4   057-040-1 057-040-1 057-040-1 J1, J2, LEFT, RIGHT CONNECTOR          unknown    unknown   0         

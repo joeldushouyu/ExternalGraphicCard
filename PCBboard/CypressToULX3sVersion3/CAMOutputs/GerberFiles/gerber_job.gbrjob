@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2024-04-13T17:28:08Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.6.2"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.57,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "newPins-primitive"
+        },
+        "Owner": "shouyu du <joeldushouyu@gmail.com>",
+        "Size": {
+            "X": 100,
+            "Y": 80
+        }
+    }
+}

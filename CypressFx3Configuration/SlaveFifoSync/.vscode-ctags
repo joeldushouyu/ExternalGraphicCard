@@ -1,0 +1,167 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	//
+$(A_OBJECT)	makefile	/^$(A_OBJECT) : %.o : %.S$/;"	t
+$(C_OBJECT)	makefile	/^$(C_OBJECT) : %.o : %.c cyfxslfifosync.h cyfxgpif_syncsf.h$/;"	t
+$(MODULE).$(EXEEXT)	makefile	/^$(MODULE).$(EXEEXT): $(A_OBJECT) $(C_OBJECT)$/;"	t
+%.o	Debug/subdir.mk	/^%.o: ..\/%.S$/;"	t
+%.o	Debug/subdir.mk	/^%.o: ..\/%.c$/;"	t
+%.o	Release/subdir.mk	/^%.o: ..\/%.S$/;"	t
+%.o	Release/subdir.mk	/^%.o: ..\/%.c$/;"	t
+%.o	makefile	/^$(A_OBJECT) : %.o : %.S$/;"	t
+%.o	makefile	/^$(C_OBJECT) : %.o : %.c cyfxslfifosync.h cyfxgpif_syncsf.h$/;"	t
+ALPHA_RESET	cyfxgpif2config.h	/^#define ALPHA_RESET /;"	d
+ASM_DEPS	Debug/sources.mk	/^ASM_DEPS := $/;"	m
+ASM_DEPS	Release/sources.mk	/^ASM_DEPS := $/;"	m
+ASM_SRCS	Debug/sources.mk	/^ASM_SRCS := $/;"	m
+ASM_SRCS	Release/sources.mk	/^ASM_SRCS := $/;"	m
+A_OBJECT	makefile	/^A_OBJECT=$(SOURCE_ASM:%.S=.\/%.o)$/;"	m
+BURST_LEN	cyfxslfifosync.h	/^#define BURST_LEN /;"	d
+CY_FX_CONSUMER_PPORT_SOCKET	cyfxslfifosync.h	/^#define CY_FX_CONSUMER_PPORT_SOCKET /;"	d
+CY_FX_CONSUMER_USB_SOCKET	cyfxslfifosync.h	/^#define CY_FX_CONSUMER_USB_SOCKET /;"	d
+CY_FX_EP_CONSUMER	cyfxslfifosync.h	/^#define CY_FX_EP_CONSUMER /;"	d
+CY_FX_EP_PRODUCER	cyfxslfifosync.h	/^#define CY_FX_EP_PRODUCER /;"	d
+CY_FX_PRODUCER_PPORT_SOCKET	cyfxslfifosync.h	/^#define CY_FX_PRODUCER_PPORT_SOCKET /;"	d
+CY_FX_PRODUCER_USB_SOCKET	cyfxslfifosync.h	/^#define CY_FX_PRODUCER_USB_SOCKET /;"	d
+CY_FX_SLFIFO_DMA_BUF_COUNT	cyfxslfifosync.h	/^#define CY_FX_SLFIFO_DMA_BUF_COUNT /;"	d
+CY_FX_SLFIFO_DMA_BUF_COUNT_P_2_U	cyfxslfifosync.h	/^#define CY_FX_SLFIFO_DMA_BUF_COUNT_P_2_U /;"	d
+CY_FX_SLFIFO_DMA_BUF_COUNT_U_2_P	cyfxslfifosync.h	/^#define CY_FX_SLFIFO_DMA_BUF_COUNT_U_2_P /;"	d
+CY_FX_SLFIFO_DMA_RX_SIZE	cyfxslfifosync.h	/^#define CY_FX_SLFIFO_DMA_RX_SIZE /;"	d
+CY_FX_SLFIFO_DMA_TX_SIZE	cyfxslfifosync.h	/^#define CY_FX_SLFIFO_DMA_TX_SIZE /;"	d
+CY_FX_SLFIFO_GPIF_16_32BIT_CONF_SELECT	cyfxslfifosync.h	/^#define CY_FX_SLFIFO_GPIF_16_32BIT_CONF_SELECT /;"	d
+CY_FX_SLFIFO_THREAD_PRIORITY	cyfxslfifosync.h	/^#define CY_FX_SLFIFO_THREAD_PRIORITY /;"	d
+CY_FX_SLFIFO_THREAD_STACK	cyfxslfifosync.h	/^#define CY_FX_SLFIFO_THREAD_STACK /;"	d
+CY_NUMBER_OF_STATES	cyfxgpif2config.h	/^#define CY_NUMBER_OF_STATES /;"	d
+CY_U3P_BUFFER_ALLOC_TIMEOUT	cyfxtx.c	/^#define CY_U3P_BUFFER_ALLOC_TIMEOUT /;"	d	file:
+CY_U3P_BUFFER_HEAP_BASE	cyfxtx.c	/^#define CY_U3P_BUFFER_HEAP_BASE /;"	d	file:
+CY_U3P_BUFFER_HEAP_SIZE	cyfxtx.c	/^#define CY_U3P_BUFFER_HEAP_SIZE /;"	d	file:
+CY_U3P_MAX	cyfxtx.c	/^#define CY_U3P_MAX(/;"	d	file:
+CY_U3P_MEM_ALLOC_TIMEOUT	cyfxtx.c	/^#define CY_U3P_MEM_ALLOC_TIMEOUT /;"	d	file:
+CY_U3P_MEM_HEAP_BASE	cyfxtx.c	/^#define CY_U3P_MEM_HEAP_BASE /;"	d	file:
+CY_U3P_MEM_HEAP_SIZE	cyfxtx.c	/^#define CY_U3P_MEM_HEAP_SIZE /;"	d	file:
+CY_U3P_MIN	cyfxtx.c	/^#define CY_U3P_MIN(/;"	d	file:
+CY_U3P_SYS_MEM_TOP	cyfxtx.c	/^#define CY_U3P_SYS_MEM_TOP /;"	d	file:
+C_DEPS	Debug/sources.mk	/^C_DEPS := $/;"	m
+C_DEPS	Release/sources.mk	/^C_DEPS := $/;"	m
+C_OBJECT	makefile	/^C_OBJECT=$(SOURCE:%.c=.\/%.o)$/;"	m
+C_SRCS	Debug/sources.mk	/^C_SRCS := $/;"	m
+C_SRCS	Release/sources.mk	/^C_SRCS := $/;"	m
+CyFxAppErrorHandler	cyfxslfifosync.c	/^CyFxAppErrorHandler ($/;"	f	typeref:typename:void
+CyFxApplicationDefine	cyfxslfifosync.c	/^CyFxApplicationDefine ($/;"	f	typeref:typename:void
+CyFxApplnLPMRqtCB	cyfxslfifosync.c	/^CyFxApplnLPMRqtCB ($/;"	f	typeref:typename:CyBool_t
+CyFxGpifConfig	cyfxgpif2config.h	/^const CyU3PGpifConfig_t CyFxGpifConfig  = {$/;"	v	typeref:typename:const CyU3PGpifConfig_t
+CyFxGpifRegValue	cyfxgpif2config.h	/^uint32_t CyFxGpifRegValue[]  = {$/;"	v	typeref:typename:uint32_t[]
+CyFxGpifTransition	cyfxgpif2config.h	/^uint16_t CyFxGpifTransition[]  = {$/;"	v	typeref:typename:uint16_t[]
+CyFxGpifWavedata	cyfxgpif2config.h	/^CyU3PGpifWaveData CyFxGpifWavedata[]  = {$/;"	v	typeref:typename:CyU3PGpifWaveData[]
+CyFxGpifWavedataPosition	cyfxgpif2config.h	/^uint8_t CyFxGpifWavedataPosition[]  = {$/;"	v	typeref:typename:uint8_t[]
+CyFxSlFifoApplnDebugInit	cyfxslfifosync.c	/^CyFxSlFifoApplnDebugInit (void)$/;"	f	typeref:typename:void
+CyFxSlFifoApplnInit	cyfxslfifosync.c	/^CyFxSlFifoApplnInit (void)$/;"	f	typeref:typename:void
+CyFxSlFifoApplnStart	cyfxslfifosync.c	/^CyFxSlFifoApplnStart ($/;"	f	typeref:typename:void
+CyFxSlFifoApplnStop	cyfxslfifosync.c	/^CyFxSlFifoApplnStop ($/;"	f	typeref:typename:void
+CyFxSlFifoApplnUSBEventCB	cyfxslfifosync.c	/^CyFxSlFifoApplnUSBEventCB ($/;"	f	typeref:typename:void
+CyFxSlFifoApplnUSBSetupCB	cyfxslfifosync.c	/^CyFxSlFifoApplnUSBSetupCB ($/;"	f	typeref:typename:CyBool_t
+CyFxSlFifoPtoUDmaCallback	cyfxslfifosync.c	/^CyFxSlFifoPtoUDmaCallback ($/;"	f	typeref:typename:void
+CyFxSlFifoUtoPDmaCallback	cyfxslfifosync.c	/^CyFxSlFifoUtoPDmaCallback ($/;"	f	typeref:typename:void
+CyFxUSB20DeviceDscr	cyfxslfifousbdscr.c	/^const uint8_t CyFxUSB20DeviceDscr[] __attribute__ ((aligned (32))) =$/;"	v	typeref:typename:const uint8_t[]
+CyFxUSB30DeviceDscr	cyfxslfifousbdscr.c	/^const uint8_t CyFxUSB30DeviceDscr[] __attribute__ ((aligned (32))) =$/;"	v	typeref:typename:const uint8_t[]
+CyFxUSBBOSDscr	cyfxslfifousbdscr.c	/^const uint8_t CyFxUSBBOSDscr[] __attribute__ ((aligned (32))) =$/;"	v	typeref:typename:const uint8_t[]
+CyFxUSBDeviceQualDscr	cyfxslfifousbdscr.c	/^const uint8_t CyFxUSBDeviceQualDscr[] __attribute__ ((aligned (32))) =$/;"	v	typeref:typename:const uint8_t[]
+CyFxUSBFSConfigDscr	cyfxslfifousbdscr.c	/^const uint8_t CyFxUSBFSConfigDscr[] __attribute__ ((aligned (32))) =$/;"	v	typeref:typename:const uint8_t[]
+CyFxUSBHSConfigDscr	cyfxslfifousbdscr.c	/^const uint8_t CyFxUSBHSConfigDscr[] __attribute__ ((aligned (32))) =$/;"	v	typeref:typename:const uint8_t[]
+CyFxUSBManufactureDscr	cyfxslfifousbdscr.c	/^const uint8_t CyFxUSBManufactureDscr[] __attribute__ ((aligned (32))) =$/;"	v	typeref:typename:const uint8_t[]
+CyFxUSBProductDscr	cyfxslfifousbdscr.c	/^const uint8_t CyFxUSBProductDscr[] __attribute__ ((aligned (32))) =$/;"	v	typeref:typename:const uint8_t[]
+CyFxUSBSSConfigDscr	cyfxslfifousbdscr.c	/^const uint8_t CyFxUSBSSConfigDscr[] __attribute__ ((aligned (32))) =$/;"	v	typeref:typename:const uint8_t[]
+CyFxUSBStringLangIDDscr	cyfxslfifousbdscr.c	/^const uint8_t CyFxUSBStringLangIDDscr[] __attribute__ ((aligned (32))) =$/;"	v	typeref:typename:const uint8_t[]
+CyFxUsbDscrAlignBuffer	cyfxslfifousbdscr.c	/^const uint8_t CyFxUsbDscrAlignBuffer[32] __attribute__ ((aligned (32)));$/;"	v	typeref:typename:const uint8_t[32]
+CyU3PAbortHandler	cyfxtx.c	/^CyU3PAbortHandler ($/;"	f	typeref:typename:void
+CyU3PDmaBufMgrSetStatus	cyfxtx.c	/^CyU3PDmaBufMgrSetStatus ($/;"	f	typeref:typename:void	file:
+CyU3PDmaBufferAlloc	cyfxtx.c	/^CyU3PDmaBufferAlloc ($/;"	f	typeref:typename:void *
+CyU3PDmaBufferDeInit	cyfxtx.c	/^CyU3PDmaBufferDeInit ($/;"	f	typeref:typename:void
+CyU3PDmaBufferFree	cyfxtx.c	/^CyU3PDmaBufferFree ($/;"	f	typeref:typename:int
+CyU3PDmaBufferInit	cyfxtx.c	/^CyU3PDmaBufferInit ($/;"	f	typeref:typename:void
+CyU3PFreeHeaps	cyfxtx.c	/^CyU3PFreeHeaps ($/;"	f	typeref:typename:void
+CyU3PMemAlloc	cyfxtx.c	/^CyU3PMemAlloc ($/;"	f	typeref:typename:void *
+CyU3PMemCmp	cyfxtx.c	/^CyU3PMemCmp ($/;"	f	typeref:typename:int32_t
+CyU3PMemCopy	cyfxtx.c	/^CyU3PMemCopy ($/;"	f	typeref:typename:void
+CyU3PMemFree	cyfxtx.c	/^CyU3PMemFree ($/;"	f	typeref:typename:void
+CyU3PMemInit	cyfxtx.c	/^CyU3PMemInit ($/;"	f	typeref:typename:void
+CyU3PMemSet	cyfxtx.c	/^CyU3PMemSet ($/;"	f	typeref:typename:void
+CyU3PPrefetchHandler	cyfxtx.c	/^CyU3PPrefetchHandler ($/;"	f	typeref:typename:void
+CyU3PUndefinedHandler	cyfxtx.c	/^CyU3PUndefinedHandler ($/;"	f	typeref:typename:void
+DMA_BUF_SIZE	cyfxslfifosync.h	/^#define DMA_BUF_SIZE	/;"	d
+DSS_STATE	cyfxgpif2config.h	/^#define DSS_STATE /;"	d
+ELF_SRCS	Debug/sources.mk	/^ELF_SRCS := $/;"	m
+ELF_SRCS	Release/sources.mk	/^ELF_SRCS := $/;"	m
+EXECUTABLES	Debug/sources.mk	/^EXECUTABLES := $/;"	m
+EXECUTABLES	Release/sources.mk	/^EXECUTABLES := $/;"	m
+EXES	makefile	/^EXES = $(MODULE).$(EXEEXT)$/;"	m
+FX3FWROOT	makefile	/^FX3FWROOT=..\/..$/;"	m
+FX3PFWROOT	makefile	/^FX3PFWROOT=..\/..\/u3p_firmware$/;"	m
+IDLE	cyfxgpif2config.h	/^#define IDLE /;"	d
+LIBS	Debug/objects.mk	/^LIBS :=$/;"	m
+LIBS	Release/objects.mk	/^LIBS :=$/;"	m
+MANUAL	cyfxslfifosync.h	/^#define MANUAL$/;"	d
+MODULE	makefile	/^MODULE = cyfxslfifosync$/;"	m
+OBJS	Debug/sources.mk	/^OBJS := $/;"	m
+OBJS	Release/sources.mk	/^OBJS := $/;"	m
+OBJ_SRCS	Debug/sources.mk	/^OBJ_SRCS := $/;"	m
+OBJ_SRCS	Release/sources.mk	/^OBJ_SRCS := $/;"	m
+O_SRCS	Debug/sources.mk	/^O_SRCS := $/;"	m
+O_SRCS	Release/sources.mk	/^O_SRCS := $/;"	m
+READ	cyfxgpif2config.h	/^#define READ /;"	d
+RESET	cyfxgpif2config.h	/^#define RESET /;"	d
+RM	Debug/makefile	/^RM := cs-rm -rf$/;"	m
+RM	Release/makefile	/^RM := cs-rm -rf$/;"	m
+SECONDARY_LIST	Debug/sources.mk	/^SECONDARY_LIST := $/;"	m
+SECONDARY_LIST	Release/sources.mk	/^SECONDARY_LIST := $/;"	m
+SECONDARY_SIZE	Debug/sources.mk	/^SECONDARY_SIZE := $/;"	m
+SECONDARY_SIZE	Release/sources.mk	/^SECONDARY_SIZE := $/;"	m
+SHORT_PKT	cyfxgpif2config.h	/^#define SHORT_PKT /;"	d
+STREAM_IN_OUT	cyfxslfifosync.h	/^#define STREAM_IN_OUT$/;"	d
+SUBDIRS	Debug/sources.mk	/^SUBDIRS := \\$/;"	m
+SUBDIRS	Release/sources.mk	/^SUBDIRS := \\$/;"	m
+S_UPPER_DEPS	Debug/sources.mk	/^S_UPPER_DEPS := $/;"	m
+S_UPPER_DEPS	Release/sources.mk	/^S_UPPER_DEPS := $/;"	m
+S_UPPER_SRCS	Debug/sources.mk	/^S_UPPER_SRCS := $/;"	m
+S_UPPER_SRCS	Release/sources.mk	/^S_UPPER_SRCS := $/;"	m
+SlFifoAppThread_Entry	cyfxslfifosync.c	/^SlFifoAppThread_Entry ($/;"	f	typeref:typename:void
+SlaveFifoSync.elf	Debug/makefile	/^SlaveFifoSync.elf: $(OBJS) $(USER_OBJS)$/;"	t
+SlaveFifoSync.elf	Release/makefile	/^SlaveFifoSync.elf: $(OBJS) $(USER_OBJS)$/;"	t
+SlaveFifoSync.lst	Debug/makefile	/^SlaveFifoSync.lst: SlaveFifoSync.elf$/;"	t
+SlaveFifoSync.lst	Release/makefile	/^SlaveFifoSync.lst: SlaveFifoSync.elf$/;"	t
+SlaveFifoSync.siz	Debug/makefile	/^SlaveFifoSync.siz: SlaveFifoSync.elf$/;"	t
+SlaveFifoSync.siz	Release/makefile	/^SlaveFifoSync.siz: SlaveFifoSync.elf$/;"	t
+USER_OBJS	Debug/objects.mk	/^USER_OBJS :=$/;"	m
+USER_OBJS	Release/objects.mk	/^USER_OBJS :=$/;"	m
+WRITE	cyfxgpif2config.h	/^#define WRITE /;"	d
+ZLP	cyfxgpif2config.h	/^#define ZLP /;"	d
+_INCLUDED_CYFXSLFIFOASYNC_H_	cyfxslfifosync.h	/^#define _INCLUDED_CYFXSLFIFOASYNC_H_$/;"	d
+_INCLUDED__	cyfxgpif2config.h	/^#define _INCLUDED__$/;"	d
+all	Debug/makefile	/^all: SlaveFifoSync.elf secondary-outputs$/;"	t
+all	Release/makefile	/^all: SlaveFifoSync.elf secondary-outputs$/;"	t
+all	makefile	/^all:compile$/;"	t
+burstLength	cyfxslfifosync.c	/^uint8_t burstLength = 0;$/;"	v	typeref:typename:uint8_t
+clean	Debug/makefile	/^clean:$/;"	t
+clean	Release/makefile	/^clean:$/;"	t
+clean	makefile	/^clean:$/;"	t
+compile	makefile	/^compile: $(C_OBJECT) $(A_OBJECT) $(EXES)$/;"	t
+glBufferManager	cyfxtx.c	/^CyU3PDmaBufMgr_t glBufferManager = {{0}, 0, 0, 0, 0, 0};$/;"	v	typeref:typename:CyU3PDmaBufMgr_t
+glChHandleSlFifoPtoU	cyfxslfifosync.c	/^CyU3PDmaChannel glChHandleSlFifoPtoU;   \/* DMA Channel handle for P2U transfer. *\/$/;"	v	typeref:typename:CyU3PDmaChannel
+glChHandleSlFifoUtoP	cyfxslfifosync.c	/^CyU3PDmaChannel glChHandleSlFifoUtoP;   \/* DMA Channel handle for U2P transfer. *\/$/;"	v	typeref:typename:CyU3PDmaChannel
+glDMARxCount	cyfxslfifosync.c	/^uint32_t glDMARxCount = 0;               \/* Counter to track the number of buffers received fro/;"	v	typeref:typename:uint32_t
+glDMATxCount	cyfxslfifosync.c	/^uint32_t glDMATxCount = 0;               \/* Counter to track the number of buffers sent to USB./;"	v	typeref:typename:uint32_t
+glIsApplnActive	cyfxslfifosync.c	/^CyBool_t glIsApplnActive = CyFalse;      \/* Whether the loopback application is active or not. /;"	v	typeref:typename:CyBool_t
+glMemBytePool	cyfxtx.c	/^CyU3PBytePool    glMemBytePool;$/;"	v	typeref:typename:CyU3PBytePool
+glMemPoolInit	cyfxtx.c	/^CyBool_t         glMemPoolInit = CyFalse;$/;"	v	typeref:typename:CyBool_t
+gpif_error_cb	cyfxslfifosync.c	/^gpif_error_cb(CyU3PPibIntrType cbType, uint16_t cbArg)$/;"	f	typeref:typename:void
+main	cyfxslfifosync.c	/^main (void)$/;"	f	typeref:typename:int
+post-build	Debug/makefile	/^post-build:$/;"	t
+post-build	Release/makefile	/^post-build:$/;"	t
+secondary-outputs	Debug/makefile	/^secondary-outputs: $(SECONDARY_LIST) $(SECONDARY_SIZE)$/;"	t
+secondary-outputs	Release/makefile	/^secondary-outputs: $(SECONDARY_LIST) $(SECONDARY_SIZE)$/;"	t
+slFifoAppThread	cyfxslfifosync.c	/^CyU3PThread slFifoAppThread;	        \/* Slave FIFO application thread structure *\/$/;"	v	typeref:typename:CyU3PThread
+tx_application_define	cyfxtx.c	/^tx_application_define ($/;"	f	typeref:typename:void
