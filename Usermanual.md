@@ -35,9 +35,9 @@ Connect the USB 3.0 Wire to the USB 3.0 Port on CyUSB3014 and connect the other 
 ## 2. Connect the HDMI cable
 Connect the HDMI cable to the HDMI port on ULX3s.
 ![](./ImageForDocumentation/ConnectToHDMIPort.jpg)
-## 3. (**Optional**: only require if did not flash the verilog code to ULX3s)
+## 3. (**Optional**: only require if never flashed the verilog code to ULX3s)
 
-Connect the Micro USB 2.0 cable to the FPGA. Navigate to ***/ulx3s-misc-colonePath/examples/dvi*** (Refer to STEP 6 in __Prerequsite__ section), run the following command to flash the Verilog code to FPGA.
+Connect the Micro USB 2.0 cable to the FPGA. Navigate to ***/ulx3s-misc-colonePath/examples/dvi*** (Refer to STEP 6 in __Prerequsite__ section of [TechnicalManual](./TechnicalMaunaul.md)), run the following command to flash the Verilog code to FPGA.
 ```bash
 ./loadToFlash.sh
 ```
@@ -47,7 +47,7 @@ Connect the Micro USB 2.0 cable to the FPGA. Navigate to ***/ulx3s-misc-colonePa
 # Instruction/Operation
 
 ### Step 1: Navigate to the modified Edid project
-___cd___ to ___/pathOfClonedEdid/userProgram___ (refer to step 5 of **prerequisite**) 
+___cd___ to ___/pathOfClonedEdid/userProgram___ (refer to step 5 of **prerequisite** in [TechnicalManual](./TechnicalMaunaul.md)) 
 ### Step 2: Configure Screen Resolution in C++ code
 Modify the [Line 199-2002](https://github.com/joeldushouyu/evdi/blob/userProgram/userProgram/main.cpp#L199-L202) in Main.cpp to select the EDID file that match to the desired screen information.
 
@@ -60,7 +60,7 @@ make clean
 make
 ```
 ### step 4 (Only when modified resolution setting in step 2 / Modified verilog code)
-***cd*** to into the directory of ***/ulx3s-misc-colonePath/examples/dvi***  (refer to step 6 of __Prerequisite__ )
+***cd*** to into the directory of ***/ulx3s-misc-colonePath/examples/dvi***  (refer to step 6 of __Prerequisite__ in [TechnicalManual](./TechnicalMaunaul.md) )
 
 Modify [line 1-3](https://github.com/joeldushouyu/ulx3s-misc/blob/doubleFIFOImplementation/examples/dvi/top/top_usbtest.v#L1-L3) of top_usbtest.v
 
@@ -76,17 +76,16 @@ Modify [line 1-3](https://github.com/joeldushouyu/ulx3s-misc/blob/doubleFIFOImpl
 |1280x1024|30 HZ|
 |1920x1080|**25** HZ|
 
-### step 5  (Only when modified resolution setting in step 2 / Modified verilog code)
 Re-compile the Verilog code and flash the Verilog by running the following command.
 ```bash
 ./loadToFlash.sh
 ```
-### step 6 : Reset the FPGA state
+### step 5 : Reset the FPGA state
 Press the reset button for about __5 seconds__. 
 ![](./ImageForDocumentation/RESETButton.jpg)
 **NOTE** Currently, the reset button is configured to be the right movement button(see Picture below). You are welcome to reconfigure the button by making change in the [verilog code](https://github.com/joeldushouyu/ulx3s-misc/blob/doubleFIFOImplementation/examples/dvi/top/top_usbtest.v#L88). However, be sure to remember to recompile and re-flash the verilog code after your change, refer to step 4 & 5 of **Instruction/Operation** .
 
-### step 7 :  Launch the C++ program
+### step 6 :  Launch the C++ program
 ___cd___ back to ___/pathOfClonedEdid/userProgram___ ( refer in step 1 of __Instruction/Operation__ ) and run the following command
 ```bash
 ./main
@@ -107,10 +106,6 @@ After __a few seconds__, the screen will blink and the monitor will show the new
 # Futher Support / Assistant
 If you have any issues or questions regarding the project, please create a new issue in the Github Repo and mention me in the discussion.  I will try my best to respond to the question as soon as possible.
 
-## Hardware Installation Procedure
-1. **Solder** the [Male Header pins](https://www.amazon.com/dp/B09MYRVJ65/ref=sspa_dk_detail_0?pd_rd_i=B09MYRVJ65&pd_rd_w=lutMY&content-id=amzn1.sym.386c274b-4bfe-4421-9052-a1a56db557ab&pf_rd_p=386c274b-4bfe-4421-9052-a1a56db557ab&pf_rd_r=207ETTBWEP14CRV8V0CX&pd_rd_wg=HHOV7&pd_rd_r=2527f86b-39b5-4beb-b827-bb7b904f87ed&s=electronics&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&th=1) onto I/O pins on ULX3s, indicated by the <code style="color:red"> Red Circles</code> in Figure 1 and Figure 2. The ULX3s do not come with soldered I/O pins.
-2. **Connect** the [Female header pins](https://www.amazon.com/dp/B0BX865TRT?ref=ppx_yo2ov_dt_b_product_details&th=1) onto the  <code style="color:red">Soldered I/O pins on ULX3s</code> and **solder** the Female pin onto the PCB conversion board, indicated by the <code style="color:purple"> Red Circles</code> in Figure 1 and Figure 2.
-3. **Connect** the [Male header pins](https://www.amazon.com/dp/B0BX865TRT?ref=ppx_yo2ov_dt_b_product_details&th=1) onto the C
 
     
 

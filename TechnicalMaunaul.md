@@ -41,9 +41,9 @@ Given the evdi library implemented a non-blocking file descriptor under the hood
 
 Assuming the CyUSB3014 device is pre-configured into synchronous slave-fifo mode, upon receiving USB data from the host laptop, the Cyusb3014 IC pushes the data to the internal buffer and notifies the ULX3s FPGA board by toggling both FLAGC and FLAGD wire (for more detail, please see the configuration part of CyUSB3014 board). 
 
-The [Verilog program](https://github.com/joeldushouyu/ulx3s-misc/tree/doubleFIFOImplementation/examples/dvi) is forked and modified the existing [HDMI video output verilog demo](https://github.com/emard/ulx3s-misc/tree/master/examples/dvi). The overall structure of the verilog code is shown in Figure 3. In the verilog program, I modified the [Async fifo](https://github.com/joeldushouyu/async_fifo/tree/doubleFifoBuffer) project to create a double FiFo. The first fifo is configured to be [4096 word size](https://github.com/joeldushouyu/ulx3s-misc/blob/doubleFIFOImplementation/examples/dvi/top/top_usbtest.v#L889) and the second fifo is configured to be [8192 word size](https://github.com/joeldushouyu/ulx3s-misc/blob/doubleFIFOImplementation/examples/dvi/top/top_usbtest.v#L889). The FPGA start out in __IDLE__ state with both FIFO empty. Once CyUSB3014 board toggle FLAGC and FLAGD wire that indicate available data and FIFO1 indicate is empty, the fpga goes to **Stream_Out** mode to read 4096 word from CyUSB3014 and write to FIFO1. After the data pass from FIFO1 to FIFO2 and indicate data available to __HDMI Output Module__, the __HDMI Output Module__ enable the __Enable Read__ wire and start reading video data from FIFO2 and convert to HDMI signal.
+The [Verilog program](https://github.com/joeldushouyu/ulx3s-misc/tree/doubleFIFOImplementation/examples/dvi) is forked and modified the existing [HDMI video output verilog demo](https://github.com/emard/ulx3s-misc/tree/master/examples/dvi). The overall structure of the verilog code is shown in Figure 3. In the verilog program, I modified the [Async fifo](https://github.com/joeldushouyu/async_fifo/tree/doubleFifoBuffer) project to create a double FiFo. The first fifo is configured to be [4096 word size](https://github.com/joeldushouyu/ulx3s-misc/blob/doubleFIFOImplementation/examples/dvi/top/top_usbtest.v#L890) and the second fifo is configured to be [64 word size](https://github.com/joeldushouyu/ulx3s-misc/blob/doubleFIFOImplementation/examples/dvi/top/top_usbtest.v#L891). The FPGA start out in __IDLE__ state with both FIFO empty. Once CyUSB3014 board toggle FLAGC and FLAGD wire that indicate available data and FIFO1 indicate is empty, the fpga goes to **Stream_Out** mode to read 4096 word from CyUSB3014 and write to FIFO1. After the data pass from FIFO1 to FIFO2 and indicate data available to __HDMI Output Module__, the __HDMI Output Module__ enable the __Enable Read__ wire and start reading video data from FIFO2 and convert to HDMI signal.
 
-**Note** Given CyUSB3014 is set up to 32 bit, the __word size__ should be configured to 32 bit. However, the __word size__ is current configured to [16 bit](https://github.com/joeldushouyu/ulx3s-misc/blob/doubleFIFOImplementation/examples/dvi/top/top_usbtest.v#L888) due to issue with the PCB board design. For more info, please refer to the __Manufacturing Details__ section.
+**Note** Given CyUSB3014 is set up to 32 bit, the __word size__ should be configured to 32 bit. However, the __word size__ is current configured to [16 bit](https://github.com/joeldushouyu/ulx3s-misc/blob/doubleFIFOImplementation/examples/dvi/top/top_usbtest.v#L888) due to issue with the PCB board design. For more info, please refer to the __Notes in "Schematics and Drawings"__ section.
 
 **Note** Currently, there is a [bug](https://github.com/dpretet/async_fifo/pull/13) I found in the async_fifo after adding [parameters for threshold value](https://github.com/dpretet/async_fifo/pull/11). Once the PR I submitted is merged, I will need to re-merge the [doube-fifo branch](https://github.com/joeldushouyu/async_fifo/tree/doubleFifoBuffer) that I used for this project with the [main branch](https://github.com/dpretet/async_fifo) 
 
@@ -88,14 +88,26 @@ Purchase a ULX3s board from [crowdsupply](https://www.crowdsupply.com/radiona/ul
 Purchase a [CyUSB3014]((https://www.infineon.com/cms/en/product/evaluation-boards/cyusb3kit-003/)) device from the official website.
 ## 3. Purchase/Manufacture the PCB conversion board
 Import the .sch and .brd file under [PCBboard](./PCBboard/CypressToULX3sVersion3/) into EagleCad or KiCad (KiCad support import project from EagleCad) and generate the Gerber file.  **NOTE**: The [Version3.zip](./PCBboard/CypressToULX3sVersion3/Version3.zip) is a existing Gerber file read for printing with JLCPCB(https://jlcpcb.com/).
-## 4. Install software for building the verilog project
+
+
+## 4. Hardware Installation Procedure
+####  Front View of Component
+![Front View](./ImageForDocumentation/FrontViewOfComponent-Instruction.png)
+####  Back view of the Component
+![Back view](./ImageForDocumentation/BackViewOfComponent-Instruction.png)
+
+
+1. **Solder** the [Male Header pins](https://www.amazon.com/dp/B09MYRVJ65/ref=sspa_dk_detail_0?pd_rd_i=B09MYRVJ65&pd_rd_w=lutMY&content-id=amzn1.sym.386c274b-4bfe-4421-9052-a1a56db557ab&pf_rd_p=386c274b-4bfe-4421-9052-a1a56db557ab&pf_rd_r=207ETTBWEP14CRV8V0CX&pd_rd_wg=HHOV7&pd_rd_r=2527f86b-39b5-4beb-b827-bb7b904f87ed&s=electronics&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&th=1) onto I/O pins on ULX3s, indicated by the <code style="color:red"> Red Circles</code> in pictures above. The ULX3s do not come with soldered I/O pins.
+2. **Connect** the [Female header pins](https://www.amazon.com/dp/B0BX865TRT?ref=ppx_yo2ov_dt_b_product_details&th=1) onto the  <code style="color:red">Soldered I/O pins on ULX3s</code> and **solder** the Female pin onto the PCB conversion board, indicated by the <code style="color:purple"> Purple Circles</code> in pictures above.
+3. **Connect** the [Male header pins](https://www.amazon.com/dp/B0BX865TRT?ref=ppx_yo2ov_dt_b_product_details&th=1) onto the CyUSB3014 Evaluation board and solder  <code style="color:blue">Soldered the Male header pin </code> onto the PCB board, indicated by the <code style="color:blue"> Blue circle</code> in pictures above. 
+
+## 5. Install software for building the verilog project
 Setup Yosys and tools for compiling the ULX3s by following the README.md guide in [oss-cad-suite-build](https://github.com/YosysHQ/oss-cad-suite-build).
 **Note** You might want to considering adding the following line into your bashrc file to save you the headache of sourcing the environment at your terminal. 
 ```bash 
 export PATH="<extracted_location>/oss-cad-suite/bin:$PATH"
 ```
-## 5. Setup the evid library
-
+## 6. Setup the evid library
 ### Step 1
 Option 1 (**preferred** & tested version): Install the correspond linux driver by following the user manual from Displaylink for [Ubuntu](https://www.synaptics.com/products/displaylink-graphics/downloads/ubuntu) or [Other Linux Distribution](https://support.displaylink.com/knowledgebase/articles/679060)
 
@@ -111,7 +123,7 @@ Add the following line into __.bashrc__ or any __shell program__ you are using.
 ```sh
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/PathOFCloneEvdiProject/evdi/library
 ```
-## 6. Setup CyUSB3014 device
+## 7. Setup CyUSB3014 device
 
 **NOTE** Currently, the GPIFII tool from Cypress **only work on Windows platform**, thus I have to configure Cypress in the VMWare that run windows 11.
 
@@ -210,7 +222,7 @@ Press **Open** and the software will start loading __SlaveFifoSync.img__ into Cy
 
 **Once finished** loading __SlaveFifoSync.img__, **unplug** CyUSB3014 from the laptop and **remove both** the ***jumper cap and jumper wire***.
 
-## 7. Compile the verilog program
+## 8. Compile the verilog program
 ### step 1: Clone modified ulx3s-misc project
 Clone My Forked Branch of [ulx3s-misc](https://github.com/joeldushouyu/ulx3s-misc). 
 
