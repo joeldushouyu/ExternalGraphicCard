@@ -15,7 +15,7 @@ The device is compatible to most linux distribution that support by [evdi](https
 
 When plugging the USb 3.0 Device into the host laptop and launch the C++ program, a new display monitor will be registered in OS and image data will stream out from the USb 3.0 port to the FPGA and output in HDMI signal.
 
-**For more info**, please refer to the [user manual](Usermanual.md) and the [Technical Manual](TechnicalMaunaul.md).
+**For more info**, please refer to the [user manual](Usermanual.md), [Technical Manual](TechnicalMaunaul.md), and the [Fabrication Plan Manual](./FabricationMaunal.md)
 
 # Demonstration
 

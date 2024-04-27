@@ -37,7 +37,7 @@ Connect the HDMI cable to the HDMI port on ULX3s.
 ![](./ImageForDocumentation/ConnectToHDMIPort.jpg)
 ## 3. (**Optional**: only require if never flashed the verilog code to ULX3s)
 
-Connect the Micro USB 2.0 cable to the FPGA. Navigate to ***/ulx3s-misc-colonePath/examples/dvi*** (Refer to STEP 6 in __Prerequsite__ section of [TechnicalManual](./TechnicalMaunaul.md)), run the following command to flash the Verilog code to FPGA.
+Connect the Micro USB 2.0 cable to the FPGA. Navigate to ***/ulx3s-misc-colonePath/examples/dvi*** (Refer to STEP 4 in __Prerequsite__ section of [TechnicalManual](./TechnicalMaunaul.md)), run the following command to flash the Verilog code to FPGA.
 ```bash
 ./loadToFlash.sh
 ```
@@ -60,7 +60,7 @@ make clean
 make
 ```
 ### step 4 (Only when modified resolution setting in step 2 / Modified verilog code)
-***cd*** to into the directory of ***/ulx3s-misc-colonePath/examples/dvi***  (refer to step 6 of __Prerequisite__ in [TechnicalManual](./TechnicalMaunaul.md) )
+***cd*** to into the directory of ***/ulx3s-misc-colonePath/examples/dvi***  (refer to step 4 of __Prerequisite__ in [TechnicalManual](./TechnicalMaunaul.md) )
 
 Modify [line 1-3](https://github.com/joeldushouyu/ulx3s-misc/blob/doubleFIFOImplementation/examples/dvi/top/top_usbtest.v#L1-L3) of top_usbtest.v
 

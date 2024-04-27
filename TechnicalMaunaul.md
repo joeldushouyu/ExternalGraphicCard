@@ -82,32 +82,15 @@ The [Verilog program](https://github.com/joeldushouyu/ulx3s-misc/tree/doubleFIFO
 
 
 # Prerequisite & Manufacturing Details
-## 1. Purchase ULX3s
-Purchase a ULX3s board from [crowdsupply](https://www.crowdsupply.com/radiona/ulx3s#products), [Mouser](https://www.mouser.com/c/?q=ulx3s) or any available online supplier.
-## 2. Purchase CyUSB3014 
-Purchase a [CyUSB3014]((https://www.infineon.com/cms/en/product/evaluation-boards/cyusb3kit-003/)) device from the official website.
-## 3. Purchase/Manufacture the PCB conversion board
-Import the .sch and .brd file under [PCBboard](./PCBboard/CypressToULX3sVersion3/) into EagleCad or KiCad (KiCad support import project from EagleCad) and generate the Gerber file.  **NOTE**: The [Version3.zip](./PCBboard/CypressToULX3sVersion3/Version3.zip) is a existing Gerber file read for printing with JLCPCB(https://jlcpcb.com/).
 
 
-## 4. Hardware Installation Procedure
-####  Front View of Component
-![Front View](./ImageForDocumentation/FrontViewOfComponent-Instruction.png)
-####  Back view of the Component
-![Back view](./ImageForDocumentation/BackViewOfComponent-Instruction.png)
-
-
-1. **Solder** the [Male Header pins](https://www.amazon.com/dp/B09MYRVJ65/ref=sspa_dk_detail_0?pd_rd_i=B09MYRVJ65&pd_rd_w=lutMY&content-id=amzn1.sym.386c274b-4bfe-4421-9052-a1a56db557ab&pf_rd_p=386c274b-4bfe-4421-9052-a1a56db557ab&pf_rd_r=207ETTBWEP14CRV8V0CX&pd_rd_wg=HHOV7&pd_rd_r=2527f86b-39b5-4beb-b827-bb7b904f87ed&s=electronics&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&th=1) onto I/O pins on ULX3s, indicated by the <code style="color:red"> Red Circles</code> in pictures above. The ULX3s do not come with soldered I/O pins.
-2. **Connect** the [Female header pins](https://www.amazon.com/dp/B0BX865TRT?ref=ppx_yo2ov_dt_b_product_details&th=1) onto the  <code style="color:red">Soldered I/O pins on ULX3s</code> and **solder** the Female pin onto the PCB conversion board, indicated by the <code style="color:purple"> Purple Circles</code> in pictures above.
-3. **Connect** the [Male header pins](https://www.amazon.com/dp/B0BX865TRT?ref=ppx_yo2ov_dt_b_product_details&th=1) onto the CyUSB3014 Evaluation board and solder  <code style="color:blue">Soldered the Male header pin </code> onto the PCB board, indicated by the <code style="color:blue"> Blue circle</code> in pictures above. 
-
-## 5. Install software for building the verilog project
+## 1. Install software for building the verilog project
 Setup Yosys and tools for compiling the ULX3s by following the README.md guide in [oss-cad-suite-build](https://github.com/YosysHQ/oss-cad-suite-build).
 **Note** You might want to considering adding the following line into your bashrc file to save you the headache of sourcing the environment at your terminal. 
 ```bash 
 export PATH="<extracted_location>/oss-cad-suite/bin:$PATH"
 ```
-## 6. Setup the evid library
+## 2. Setup the evid library
 ### Step 1
 Option 1 (**preferred** & tested version): Install the correspond linux driver by following the user manual from Displaylink for [Ubuntu](https://www.synaptics.com/products/displaylink-graphics/downloads/ubuntu) or [Other Linux Distribution](https://support.displaylink.com/knowledgebase/articles/679060)
 
@@ -123,7 +106,7 @@ Add the following line into __.bashrc__ or any __shell program__ you are using.
 ```sh
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/PathOFCloneEvdiProject/evdi/library
 ```
-## 7. Setup CyUSB3014 device
+## 3. Setup CyUSB3014 device
 
 **NOTE** Currently, the GPIFII tool from Cypress **only work on Windows platform**, thus I have to configure Cypress in the VMWare that run windows 11.
 
@@ -222,7 +205,7 @@ Press **Open** and the software will start loading __SlaveFifoSync.img__ into Cy
 
 **Once finished** loading __SlaveFifoSync.img__, **unplug** CyUSB3014 from the laptop and **remove both** the ***jumper cap and jumper wire***.
 
-## 8. Compile the verilog program
+## 4. Compile the verilog program
 ### step 1: Clone modified ulx3s-misc project
 Clone My Forked Branch of [ulx3s-misc](https://github.com/joeldushouyu/ulx3s-misc). 
 
