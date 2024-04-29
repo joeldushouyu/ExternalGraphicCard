@@ -83,7 +83,7 @@ Re-compile the Verilog code and flash the Verilog by running the following comma
 ### step 5 : Reset the FPGA state
 Press the reset button for about __5 seconds__. 
 ![](./ImageForDocumentation/RESETButton.jpg)
-**NOTE** Currently, the reset button is configured to be the right movement button(see Picture below). You are welcome to reconfigure the button by making change in the [verilog code](https://github.com/joeldushouyu/ulx3s-misc/blob/doubleFIFOImplementation/examples/dvi/top/top_usbtest.v#L88). However, be sure to remember to recompile and re-flash the verilog code after your change, refer to step 4 & 5 of **Instruction/Operation** .
+**NOTE** Currently, the reset button is configured to be the right movement button(see Picture below). You are welcome to reconfigure the button by making change in the [verilog code](https://github.com/joeldushouyu/ulx3s-misc/blob/doubleFIFOImplementation/examples/dvi/top/top_usbtest.v#L88). However, be sure to remember to recompile and re-flash the verilog code after your change, refer to step 4 of **Instruction/Operation** .
 
 ### step 6 :  Launch the C++ program
 ___cd___ back to ___/pathOfClonedEdid/userProgram___ ( refer in step 1 of __Instruction/Operation__ ) and run the following command
