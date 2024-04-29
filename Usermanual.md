@@ -103,7 +103,7 @@ After __a few seconds__, the screen will blink and the monitor will show the new
     Refer to the __Instruction/Operation__ section to choose a lower/higher resolution screen setting. 
 
 
-# Futher Support / Assistant
+# Further Support / Assistant
 If you have any issues or questions regarding the project, please create a new issue in the Github Repo and mention me in the discussion.  I will try my best to respond to the question as soon as possible.
 
 
