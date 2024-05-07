@@ -90,6 +90,10 @@ Setup Yosys and tools for compiling the ULX3s by following the README.md guide i
 ```bash 
 export PATH="<extracted_location>/oss-cad-suite/bin:$PATH"
 ```
+
+Also, add the [vhdlv](https://github.com/ldoolitt/vhd2vl) project by
+    1. clone and build the vhdlv project
+    2. add the build result to __PATH__ variable in .bashrc, just like above.
 ## 2. Setup the evid library
 ### Step 1
 Option 1 (**preferred** & tested version): Install the correspond linux driver by following the user manual from Displaylink for [Ubuntu](https://www.synaptics.com/products/displaylink-graphics/downloads/ubuntu) or [Other Linux Distribution](https://support.displaylink.com/knowledgebase/articles/679060)
